@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('/static/images/background_katarina.jpg'); /* replace with your image path */
+  background-size: cover;       /* makes the image cover entire area */
+  background-position: top center;  /* shows upper part of image */
+  background-repeat: no-repeat; /* prevents tiling */
+  color: #333;
+}
+
+.navbar {
+  background-color: #f1f1f1;
+  height: 60px;
+  display: flex;
+  justify-content: space-between; /* brand left, links right */
+  align-items: center;
+  padding: 0 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.brand {
+  font-size: 22px;
+  color: #222;
+}
+
+.links {
+  display: flex;
+  gap: 50px; /* more space between links */
+}
+
+.links a {
+  color: #ff1493; /* bright pink */
+  text-decoration: underline dashed;
+  text-decoration-color: #ff1493;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  pointer-events: auto;   /* allow clicking always */
+  cursor: pointer;
+}
+
+.links a:hover {
+  color: #ff69b4;
+  text-decoration-style: solid;
+}
+
+.links a.active {
+  color: #ff69b4;
+  font-weight: 700;
+  text-decoration: underline solid;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+.content-container {
+  max-width: 700px;       /* limits width for readability */
+  margin: 40px auto;      /* centers horizontally and adds vertical spacing */
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  color: #222;            /* darker text on white background */
+  text-align: center;     /* centers text inside */
+}
+
+/* Carousel styles */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  height: 400px;      /* fixed height to prevent resizing */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-images {
+  height: 100%;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;        /* make images fill container height */
+  object-fit: cover;   /* crop/scale images nicely */
+  display: none;
+  border-radius: 8px;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.carousel button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+/* Editable calendar day styles */
+.cal-dates div {
+  min-height: 50px; /* enough vertical space for typing */
+  padding: 4px;
+  outline: none; /* remove default outline on focus */
+  cursor: text;  /* indicate editable */
+  white-space: pre-wrap; /* allows multiline text */
+  overflow-wrap: break-word;
+  user-select: text;
+}
+
+.cal-dates div.empty {
+  cursor: default;
+  background: transparent;
+  contenteditable: false;
+}
+
+.cal-dates div:focus {
+  background-color: #ffe4f1; /* subtle pink highlight on focus */
+  border-radius: 8px;
+}

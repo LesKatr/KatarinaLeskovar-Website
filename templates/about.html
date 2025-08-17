@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="brand">Welcome to the cello world!</div>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/about" class="active">About me</a>
+      <a href="/cello_classroom">Cello classroom</a>
+      <a href="/agenda">Agenda</a>
+    </div>
+  </div>
+
+  <main style="padding: 20px;">
+      <div class="content-container">
+    <h1>About Me</h1>
+    <p>Hello! I’m Katarina Leskovar, a passionate cello teacher and musician.</p>
+    <p>Slovenian-born cellist Katarina Leskovar performs internationally as a soloist, chamber musician, and orchestral musician. As a dynamic performer, her artistry has been recognised through numerous international awards, most recently the Tunnell Trust Award with the Talos String Quartet. She constantly seeks parallels between old and new, past and present, and is therefore working across a diverse array of musical branches.
+        Katarina has performed at various renowned venues including the Beethoven-Haus Bonn, the Musikverein and Konzerthaus Vienna, the Alte Oper Frankfurt, the Semperoper Dresden, the Cité Internationale des Arts Paris, the Concertgebouw Amsterdam. She has also been invited to perform at festivals such as the Lucerne Festival, the Davos Festival, the Warsaw Autumn, the Ruhrtriennale, the Klangspuren Festival, the Carinthian Summer, the Festival Ljubljana, and the Chamber Music Festival Hohenstaufen.
+        Holding a keen interest in the discovery and realisation of music by living composers, she has given world premieres of many new works by composers such as Beat Furrer, Thomas Kessler, Svetlana Maraš, Judit Varga, Uroš Rojko, Jean-Jacques Dünki and many others. She is a member of various classical and contemporary music ensembles, including Talos Quartet, Trio Aureus, Duo Leskovar-Grm, Ensemble Lemniscate, KlangLab Ensemble and Trio Rêverie with range from playing standard repertoire as well as discovering new and lesser-known pieces. She was a member of the Gustav Mahler Jugendorchester and performed with the Staatskapelle Dresden under Herbert Blomstedt, Jonathan Nott and Christian Thielemann. Katarina has performed as a soloist with the RTV Slovenia Symphony Orchestra and attended master classes with members of the Ensemble Modern, Ivry Gitlis, Wolfgang Emanuel Schmidt, Torleif Thedeen, Wen-Sinn Yang, Natalie Clein, Nora Chastain and many others.
+        She completed her soloist studies at the Universität der Künste in Berlin and previously studied cello at the Hochschule für Musik Carl Maria von Weber in Dresden, the Hochschule für Musik in Basel and the Universität für Musik und darstellende Kunst in Graz in the classes of Danjulo Ishizaka and Julian Arp, as well as contemporary music with the ensemble zone expérimentale. She also completed an internship with the Basel Sinfonietta.
+        Holding an open approach to performance, she offers fresh and dynamic perspectives that enhance the musical experience.</p>
+    <!-- Add more content here -->
+      <h2>On stage:</h2>
+<div class="carousel">
+  <button class="prev" aria-label="Previous">&#10094;</button>
+
+  <div class="carousel-images">
+    <img src="/static/images/photo1.jpeg" alt="Photo 1" class="active"/>
+    <img src="/static/images/photo2.jpg" alt="Photo 2" />
+    <img src="/static/images/photo3.png" alt="Photo 3" />
+  </div>
+
+  <button class="next" aria-label="Next">&#10095;</button>
+</div>
+      </div>
+  </main>
+
+  <script>
+  const images = document.querySelectorAll('.carousel-images img');
+  const prevBtn = document.querySelector('.carousel .prev');
+  const nextBtn = document.querySelector('.carousel .next');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+  </script>
+
+
+</body>
+</html>
